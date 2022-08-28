@@ -16,9 +16,17 @@ export const CharacterList = () => {
 
   return (
     <div>
-      {characters.map(character => {
-        return <Character key={character.id} character={character} />
-      })}
+      {load ? (
+        <h1>Loading...</h1>
+      ) : (
+        characters.map(character => {
+          return (
+            <div>
+              <Character key={character.id} character={character} />
+            </div>
+          )
+        })
+      )}
     </div>
   )
 }
